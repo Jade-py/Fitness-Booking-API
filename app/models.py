@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from app.database import Base
 
+# Create two ORM Models for db tables describing a specific fitness class and booking a fitness session
 class FitnessClass(Base):
     __tablename__ = "classes"
     id = Column(Integer, primary_key=True, index=True)

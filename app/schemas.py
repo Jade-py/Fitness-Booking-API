@@ -1,6 +1,7 @@
 from pydantic import BaseModel, EmailStr, ConfigDict
 from datetime import datetime
 
+# Creating schemas for serialization and validation of stored data
 class ClassOut(BaseModel):
     id: int
     name: str
@@ -19,6 +20,4 @@ class BookingOut(BaseModel):
     class_id: int
     client_name: str
     client_email: EmailStr
-
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

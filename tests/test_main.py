@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 
 client = TestClient(app)
 
-# Setup DB before each test (manual approach)
+# Setup db before each test (manual approach)
 def setup_module(module):
     Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
