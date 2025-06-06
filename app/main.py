@@ -41,7 +41,7 @@ def book_class(booking: schemas.BookingIn, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="No slots available")
 
     fitness_class.available_slots -= 1
-    db_booking = models.Booking(**booking.dict())
+    db_booking = models.Booking(**booking.model_dump())
     db.add(db_booking)
     db.commit()
     db.refresh(db_booking)

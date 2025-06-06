@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, ConfigDict
 from datetime import datetime
 
 class ClassOut(BaseModel):
@@ -7,9 +7,7 @@ class ClassOut(BaseModel):
     date_time: datetime
     instructor: str
     available_slots: int
-
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class BookingIn(BaseModel):
     class_id: int
